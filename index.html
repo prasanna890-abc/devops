@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script>
+        function calculate(operation){
+            let num1=parseFloat(document.getElementById('num1').value);
+            let num2=parseFloat(document.getElementById('num2').value);
+            let result;
+        
+        switch(operation){
+             case 'add':
+                result=num1+num2;
+                break;
+            case 'sub':
+                result=num1-num2;
+                break;
+            case 'mul':
+                result=num1*num2;
+                break;    
+            case 'divide':
+                result=num1*num2;
+                break;  
+            default:     
+           result='invalid number';
+            break;
+        }
+        document.getElementById('result').innerText = 'Result: ' + result;
+    }
+    </script>
+</head>
+<body>
+    <h1>simple Calculator</h1>
+    <form>
+        <label for="num1">num1</label>
+        <input type="number" name="num1" id="num1"><br><br>
+        <label for="num2">num2</label>
+        <input type="number" name="num2" id="num2"><br><br>
+        <button type="button" onclick="calculate('add')">Add</button>
+        <button type="button" onclick="calculate('sub')">Subtract</button>
+        <button type="button" onclick="calculate('mul')">Multiply</button>
+        <button type="button" onclick="calculate('divide')">Divide</button>
+    </form>  
+    <h2 id="result">Result</h2>
+</body>
+</html>
